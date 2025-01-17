@@ -20,7 +20,7 @@ constexpr std::uint32_t gpio_moder_offset = 0x0U;
 constexpr std::uint32_t gpio_otyper_offset = 0x04U;
 
 /*------------------ OSPEEDER_OFFSET --------------------*/
-constexpr std::uint32_t gpio_ospeeder_offset = 0x08U;
+constexpr std::uint32_t gpio_ospeedr_offset = 0x08U;
 
 /*------------------ PUPDR_OFFSET ---------------------*/
 constexpr std::uint32_t gpio_pupdr_offset = 0x0CU;
@@ -50,41 +50,41 @@ inline gpio_struct* const gpio_ptr_addr = reinterpret_cast<gpio_struct*>(&GPIO_T
 inline gpio_struct& GPIO_REG = *gpio_ptr_addr; 
 
 /* ---------------------------------------------------- GPIOA REGISTERS ------------------------------------------------- */
-/* GPIOA_REG_BASE */
+/* GPIO_REG_BASE */
 inline gpio_struct* const gpioa_base_addr = reinterpret_cast<gpio_struct*>(gpioa_base_address);  // Definição do ponteiro
 inline gpio_struct& GPIOA_BASE_ADDR = *gpioa_base_addr; 
 
-/* GPIOA_MODER */
-inline gpio_moder* const gpioa_base_addr = reinterpret_cast<gpio_moder*>(gpioa_base_address + gpio_moder_offset);  // Definição do ponteiro
-inline gpio_moder& GPIOA_MODER = *gpioa_base_addr; 
+/* GPIO_MODER */
+inline gpio_moder* const gpioa_moder_addr = reinterpret_cast<gpio_moder*>(gpioa_base_address + gpio_moder_offset);  // Definição do ponteiro
+inline gpio_moder& GPIOA_MODER = *gpioa_moder_addr; 
+
+/* GPIO_OTYPER */
+inline gpio_otyper* const gpioa_otyper_addr = reinterpret_cast<gpio_otyper*>(gpioa_base_address + gpio_otyper_offset);  // Definição do ponteiro
+inline gpio_otyper& GPIOA_OTYPER = *gpioa_otyper_addr; 
+
+/* GPIO_OSPEEDR */
+inline gpio_ospeedr* const gpioa_ospeedr_addr = reinterpret_cast<gpio_ospeedr*>(gpioa_base_address + gpio_ospeedr_offset);  // Definição do ponteiro
+inline gpio_ospeedr& GPIOA_OSPEEDR = *gpioa_ospeedr_addr; 
+
+/* GPIO_PUPDR */
+inline gpio_pupdr* const gpioa_pupdr_addr = reinterpret_cast<gpio_pupdr*>(gpioa_base_address + gpio_pupdr_offset);  // Definição do ponteiro
+inline gpio_pupdr& GPIOA_PUPDR = *gpioa_pupdr_addr; 
+
+/* GPIO_IDR */
+inline gpio_idr* const gpioa_idr_addr = reinterpret_cast<gpio_idr*>(gpioa_base_address + gpio_idr_offset);  // Definição do ponteiro
+inline gpio_idr& GPIOA_IDR = *gpioa_idr_addr; 
+
+/* GPIO_ODR */
+inline gpio_odr* const gpioa_odr_addr = reinterpret_cast<gpio_odr*>(gpioa_base_address + gpio_odr_offset);  // Definição do ponteiro
+inline gpio_odr& GPIOA_ODR = *gpioa_odr_addr; 
+
 
 /* ---------------------------------------------------- GPIOB REGISTERS ------------------------------------------------- */
-/* GPIOB_REG_BASE */
-inline gpio_struct* const gpiob_base_addr = reinterpret_cast<gpio_struct*>(gpiob_base_address);  // Definição do ponteiro
-inline gpio_struct& GPIOB_BASE_ADDR = *gpiob_base_addr; 
-
-/* GPIOC_REG_BASE */
-inline gpio_struct* const gpioc_base_addr = reinterpret_cast<gpio_struct*>(gpioc_base_address);  // Definição do ponteiro
-inline gpio_struct& GPIOC_BASE_ADDR = *gpioc_base_addr; 
-
-/* GPIOD_REG_BASE */
-inline gpio_struct* const gpiod_base_addr = reinterpret_cast<gpio_struct*>(gpiod_base_address);  // Definição do ponteiro
-inline gpio_struct& GPIOD_BASE_ADDR = *gpiod_base_addr; 
-
-/* GPIOE_REG_BASE */
-inline gpio_struct* const gpioe_base_addr = reinterpret_cast<gpio_struct*>(gpioe_base_address);  // Definição do ponteiro
-inline gpio_struct& GPIOE_BASE_ADDR = *gpioe_base_addr; 
-
-/* GPIOF_REG_BASE */
-inline gpio_struct* const gpiof_base_addr = reinterpret_cast<gpio_struct*>(gpiof_base_address);  // Definição do ponteiro
-inline gpio_struct& GPIOF_BASE_ADDR = *gpiof_base_addr; 
-
-/* GPIOG_REG_BASE */
-inline gpio_struct* const gpiog_base_addr = reinterpret_cast<gpio_struct*>(gpiog_base_address);  // Definição do ponteiro
-inline gpio_struct& GPIOG_BASE_ADDR = *gpiog_base_addr; 
-
-/* GPIOH_REG_BASE */
-inline gpio_struct* const gpioh_base_addr = reinterpret_cast<gpio_struct*>(gpioh_base_address);  // Definição do ponteiro
-inline gpio_struct& GPIOH_BASE_ADDR = *gpioh_base_addr; 
+/* ---------------------------------------------------- GPIOC REGISTERS ------------------------------------------------- */
+/* ---------------------------------------------------- GPIOD REGISTERS ------------------------------------------------- */
+/* ---------------------------------------------------- GPIOE REGISTERS ------------------------------------------------- */
+/* ---------------------------------------------------- GPIOF REGISTERS ------------------------------------------------- */
+/* ---------------------------------------------------- GPIOG REGISTERS ------------------------------------------------- */
+/* ---------------------------------------------------- GPIOH REGISTERS ------------------------------------------------- */
 
 #endif
